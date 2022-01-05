@@ -1,0 +1,20 @@
+- id: terraform_fmt
+  name: terraform fmt
+  description: Rewrites all Terraform configuration files to a canonical format.
+  language: system
+  files: \.tf(vars)?$
+  entry: terraform
+  args: [fmt, -recursive]
+  require_serial: true
+  pass_filenames: false
+  verbose: true
+- id: terraform_validate
+  name: terraform validate
+  description: Validate Terraform configuration.
+  language: system
+  files: \.tf(vars)?$
+  entry: terraform
+  args: [validate]
+  require_serial: true
+  pass_filenames: false
+  verbose: true
